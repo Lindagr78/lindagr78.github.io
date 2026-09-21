@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daniel Moreira — Analista de Sistemas, especialista em banco de dados, BI, automação, desenvolvimento web e soluções tecnológicas.">
+  <meta name="author" content="Daniel Moreira">
+  <meta name="theme-color" content="#08111f">
+
+  <meta property="og:title" content="Daniel Moreira | Analista de Sistemas">
+  <meta property="og:description" content="Banco de Dados, BI, Automação, Desenvolvimento de Sistemas e Integrações.">
+  <meta property="og:type" content="website">
+
+  <title>Daniel Moreira | Analista de Sistemas</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230d96f2%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235968f2%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2240%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EDM%3C%2Ftext%3E%0A%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>
+/* =========================================================
+   Daniel Moreira — Portfolio
+   ========================================================= */
+
+:root {
+  --bg: #060b14;
+  --bg-2: #09111e;
+  --surface: rgba(14, 22, 37, 0.78);
+  --surface-solid: #0f1828;
+  --surface-2: #131f33;
+  --border: rgba(148, 163, 184, 0.13);
+  --border-strong: rgba(148, 163, 184, 0.24);
+  --text: #f7f9fc;
+  --text-2: #aeb9ca;
+  --muted: #758197;
+  --blue: #31a3ff;
+  --blue-2: #0d96f2;
+  --violet: #7f7cff;
+  --green: #55d6a3;
+  --gold: #e4b95f;
+  --danger: #ff7d7d;
+  --shadow: 0 32px 80px rgba(0, 0, 0, .34);
+  --container: 1180px;
+  --radius-xl: 30px;
+  --radius-lg: 22px;
+  --radius-md: 15px;
+}
+
+html[data-theme="light"] {
+  --bg: #f7f9fc;
+  --bg-2: #edf3fa;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-solid: #ffffff;
+  --surface-2: #f3f6fb;
+  --border: rgba(35, 52, 76, 0.10);
+  --border-strong: rgba(35, 52, 76, 0.18);
+  --text: #121927;
+  --text-2: #4a586d;
+  --muted: #748096;
+  --blue: #0d96f2;
+  --blue-2: #087ec9;
+  --violet: #655ef1;
+  --green: #179a6b;
+  --gold: #b27a18;
+  --shadow: 0 28px 72px rgba(44, 62, 88, .11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 2%, rgba(49, 163, 255, .08), transparent 34%),
+    radial-gradient(circle at 94% 28%, rgba(127, 124, 255, .07), transparent 30%),
+    var(--bg);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  opacity: .16;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E");
+}
+
+.bg-orb {
+  position: fixed;
+  z-index: -2;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .10;
+  pointer-events: none;
+}
+
+.bg-orb-one {
+  top: -200px;
+  left: -170px;
+  background: var(--blue);
+}
+
+.bg-orb-two {
+  top: 35%;
+  right: -210px;
+  background: var(--violet);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.site-header.scrolled {
+  border-bottom-color: var(--border);
+}
+
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-symbol {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--blue-2), #536df5);
+  box-shadow: 0 10px 28px rgba(13, 150, 242, .20);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .83rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-text strong {
+  font-size: .88rem;
+}
+
+.brand-text small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .66rem;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.desktop-nav a {
+  position: relative;
+  color: var(--text-2);
+  font-size: .83rem;
+  font-weight: 600;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--blue);
+  transition: right .2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--text);
+}
+
+.desktop-nav a:hover::after {
+  right: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle,
+.menu-button {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.icon-moon {
+  display: none;
+}
+
+html[data-theme="light"] .icon-sun {
+  display: none;
+}
+
+html[data-theme="light"] .icon-moon {
+  display: block;
+}
+
+.menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 13px;
+}
+
+.menu-button span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.hero {
+  min-height: calc(100svh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 72px 0 90px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.07fr .93fr;
+  align-items: center;
+  gap: 82px;
+}
+
+.eyebrow,
+.section-kicker,
+.project-label,
+.simple-project-status {
+  color: var(--blue);
+  font-size: .70rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-2);
+  background: var(--surface);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--green) 12%, transparent);
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 24px 0 23px;
+  font-size: clamp(3rem, 6.4vw, 5.8rem);
+  line-height: .99;
+  letter-spacing: -.067em;
+}
+
+.gradient-text {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(110deg, #5ab7ff 0%, #7a8cff 58%, #a889ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-description {
+  max-width: 710px;
+  margin: 0;
+  color: var(--text-2);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+}
+
+.hero-description strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 31px;
+}
+
+.button {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: .86rem;
+  font-weight: 750;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: white;
+  background: linear-gradient(135deg, #0d96f2, #526cf4);
+  box-shadow: 0 15px 34px rgba(13, 150, 242, .18);
+}
+
+.button-secondary {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hero-tags,
+.mini-tags,
+.project-tech,
+.stack-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.hero-tags {
+  margin-top: 33px;
+}
+
+.hero-tags span,
+.mini-tags span,
+.project-tech span,
+.stack-items span {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-2);
+  background: var(--surface);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .65rem;
+}
+
+.hero-panel {
+  position: relative;
+}
+
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background:
+    linear-gradient(155deg, rgba(49,163,255,.08), transparent 30%),
+    var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -95px;
+  top: -105px;
+  border-radius: 50%;
+  background: var(--blue);
+  filter: blur(90px);
+  opacity: .12;
+}
+
+.profile-card-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: .69rem;
+  font-weight: 650;
+}
+
+.profile-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.profile-code {
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .61rem;
+}
+
+.profile-avatar {
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  margin: 28px auto 15px;
+  border: 1px solid rgba(49, 163, 255, .25);
+  border-radius: 28px;
+  background: linear-gradient(145deg, #0d96f2, #5d65ec);
+  box-shadow: 0 20px 50px rgba(13,150,242,.18);
+}
+
+.profile-avatar span {
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -.08em;
+}
+
+.profile-title {
+  text-align: center;
+}
+
+.profile-title strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.profile-title span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-2);
+  font-size: .76rem;
+}
+
+.profile-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin: 24px 0;
+}
+
+.profile-metrics article {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+  text-align: center;
+}
+
+.profile-metrics strong {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .92rem;
+}
+
+.profile-metrics span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .58rem;
+  line-height: 1.3;
+}
+
+.profile-stack {
+  display: grid;
+  gap: 9px;
+}
+
+.stack-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stack-row span {
+  color: var(--muted);
+  font-size: .66rem;
+}
+
+.stack-row b {
+  color: var(--text-2);
+  font-size: .65rem;
+  font-weight: 650;
+  text-align: right;
+}
+
+.float-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-solid);
+  box-shadow: var(--shadow);
+}
+
+.float-badge > span {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .65rem;
+  font-weight: 800;
+}
+
+.float-badge div {
+  display: flex;
+  flex-direction: column;
+}
+
+.float-badge strong {
+  font-size: .74rem;
+}
+
+.float-badge small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: .59rem;
+}
+
+.float-badge-one {
+  top: 19%;
+  right: -58px;
+}
+
+.float-badge-two {
+  left: -48px;
+  bottom: 13%;
+}
+
+.section {
+  position: relative;
+  padding: 108px 0;
+}
+
+.section-soft {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-2) 58%, transparent);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 88px;
+}
+
+.section-title,
+.section-heading {
+  max-width: 680px;
+}
+
+.section-heading.centered {
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.section-title h2,
+.section-heading h2,
+.contact-main h2 {
+  margin: 10px 0 0;
+  font-size: clamp(2rem, 4.2vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+.section-heading p {
+  margin: 16px 0 0;
+  color: var(--text-2);
+}
+
+.section-content p {
+  color: var(--text-2);
+}
+
+.section-content .lead {
+  margin-top: 0;
+  color: var(--text);
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.section-content strong {
+  color: var(--text);
+}
+
+blockquote {
+  margin: 30px 0 0;
+  padding: 20px 22px;
+  border-left: 3px solid var(--blue);
+  border-radius: 0 14px 14px 0;
+  color: var(--text-2);
+  background: var(--surface);
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.expertise-card,
+.simple-project,
+.stack-group,
+.contact-panel {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.expertise-card {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border-radius: 19px;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+}
+
+.card-index {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .62rem;
+}
+
+.card-icon,
+.simple-project-icon {
+  width: fit-content;
+  min-width: 43px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  padding: 0 9px;
+  border-radius: 10px;
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 11%, transparent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .65rem;
+  font-weight: 800;
+}
+
+.expertise-card h3 {
+  margin: auto 0 9px;
+  font-size: 1rem;
+}
+
+.expertise-card p {
+  margin: 0 0 18px;
+  color: var(--text-2);
+  font-size: .82rem;
+}
+
+.mini-tags span {
+  padding: 5px 8px;
+  font-size: .58rem;
+}
+
+.featured-project {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.project-visual {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 48px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(49,163,255,.15), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(127,124,255,.14), transparent 30%),
+    #09111f;
+}
+
+.app-window {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px;
+  background: #0f1828;
+  box-shadow: 0 34px 75px rgba(0,0,0,.42);
+}
+
+.app-window-top {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 13px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  background: #0b1321;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.window-buttons span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #607086;
+}
+
+.window-buttons span:first-child { background: #ff6f6f; }
+.window-buttons span:nth-child(2) { background: #ffc95c; }
+.window-buttons span:nth-child(3) { background: #55d89a; }
+
+.app-address {
+  flex: 1;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 5px 11px;
+  border-radius: 7px;
+  color: #6f7d91;
+  background: #141e2f;
+  font-size: .52rem;
+  text-align: center;
+}
+
+.app-dashboard {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+
+.mock-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 7px;
+  border-right: 1px solid rgba(255,255,255,.07);
+  background: #0a111d;
+}
+
+.mock-logo {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: white;
+  background: #0d96f2;
+  font-size: .56rem;
+  font-weight: 800;
+}
+
+.mock-menu {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #172337;
+}
+
+.mock-menu.active {
+  background: #214563;
+}
+
+.mock-content {
+  padding: 16px;
+}
+
+.mock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mock-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mock-title,
+.mock-subtitle,
+.mock-avatar,
+.mock-cards span {
+  display: block;
+  border-radius: 999px;
+  background: #1b273a;
+}
+
+.mock-title { width: 116px; height: 9px; }
+.mock-subtitle { width: 76px; height: 6px; opacity: .65; }
+.mock-avatar { width: 29px; height: 29px; }
+
+.mock-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin: 18px 0;
+}
+
+.mock-cards span {
+  height: 48px;
+  border-radius: 10px;
+}
+
+.mock-cards span:first-child { background: #153552; }
+.mock-cards span:nth-child(2) { background: #252c50; }
+.mock-cards span:nth-child(3) { background: #173d35; }
+
+.mock-chat-area {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: .39fr .61fr;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+}
+
+.mock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 9px;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+
+.mock-list span {
+  display: block;
+  height: 38px;
+  border-radius: 9px;
+  background: #172236;
+}
+
+.mock-list .selected {
+  background: #203b57;
+}
+
+.mock-chat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 15px 48px;
+  background: #0e1725;
+}
+
+.bubble {
+  display: block;
+  width: 68%;
+  height: 25px;
+  border-radius: 8px 8px 8px 3px;
+  background: #1c293c;
+}
+
+.bubble.outgoing {
+  align-self: flex-end;
+  border-radius: 8px 8px 3px 8px;
+  background: #174237;
+}
+
+.bubble.small {
+  width: 44%;
+}
+
+.mock-input {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 11px;
+  height: 27px;
+  border-radius: 9px;
+  background: #182437;
+}
+
+.project-info {
+  padding: 52px 48px;
+}
+
+.project-info h3 {
+  margin: 11px 0 15px;
+  font-size: clamp(2.1rem, 4vw, 3.45rem);
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+
+.project-description {
+  color: var(--text-2);
+}
+
+.project-tech {
+  margin: 23px 0;
+}
+
+.project-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-2);
+  font-size: .84rem;
+}
+
+.project-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.project-security {
+  display: flex;
+  gap: 11px;
+  margin-top: 26px;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+}
+
+.project-security p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: .73rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 15px;
+}
+
+.simple-project {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.simple-project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.simple-project-status {
+  color: var(--muted);
+  font-size: .58rem;
+}
+
+.simple-project h3 {
+  margin: auto 0 9px;
+  font-size: 1.25rem;
+}
+
+.simple-project p {
+  margin: 0 0 18px;
+  color: var(--text-2);
+  font-size: .84rem;
+}
+
+.stack-groups {
+  display: grid;
+  gap: 10px;
+  margin-top: 45px;
+}
+
+.stack-group {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  gap: 30px;
+  min-height: 94px;
+  padding: 18px 21px;
+  border-radius: 16px;
+}
+
+.stack-group > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stack-number {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .65rem;
+}
+
+.stack-group h3 {
+  margin: 0;
+  font-size: .92rem;
+}
+
+.contact-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 70px;
+  padding: 50px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.contact-main p {
+  max-width: 440px;
+  margin: 17px 0 26px;
+  color: var(--text-2);
+}
+
+.contact-list {
+  display: grid;
+  gap: 9px;
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
+  border-color: var(--border-strong);
+}
+
+.contact-symbol {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 11%, transparent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .63rem;
+  font-weight: 800;
+}
+
+.contact-item > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item small {
+  color: var(--muted);
+  font-size: .62rem;
+}
+
+.contact-item strong {
+  overflow: hidden;
+  margin-top: 2px;
+  font-size: .78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-item b {
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-inner > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-inner strong {
+  font-size: .83rem;
+}
+
+.footer-inner span,
+.footer-inner p {
+  color: var(--muted);
+  font-size: .68rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay {
+  transition-delay: .11s;
+}
+
+@media (max-width: 1080px) {
+  .hero-grid,
+  .featured-project,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    gap: 62px;
+  }
+
+  .hero-panel {
+    max-width: 720px;
+  }
+
+  .float-badge-one { right: -8px; }
+  .float-badge-two { left: -8px; }
+
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-visual {
+    min-height: 500px;
+  }
+
+  .contact-panel {
+    gap: 38px;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: color-mix(in srgb, var(--bg) 96%, transparent);
+  }
+
+  .header-inner {
+    min-height: 66px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 14px;
+    border-top: 1px solid transparent;
+    background: color-mix(in srgb, var(--bg) 98%, transparent);
+    transition: max-height .25s ease, padding .25s ease, border-color .25s ease;
+  }
+
+  .mobile-nav.open {
+    max-height: 330px;
+    padding-top: 8px;
+    padding-bottom: 13px;
+    border-top-color: var(--border);
+  }
+
+  .mobile-nav a {
+    padding: 11px 8px;
+    color: var(--text-2);
+    font-size: .84rem;
+    font-weight: 650;
+  }
+
+  .hero {
+    padding: 54px 0 74px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 13vw, 4.4rem);
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .float-badge {
+    display: none;
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .expertise-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card {
+    min-height: 245px;
+  }
+
+  .project-visual {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .app-dashboard {
+    min-height: 330px;
+    grid-template-columns: 48px 1fr;
+  }
+
+  .mock-content {
+    padding: 12px;
+  }
+
+  .mock-chat-area {
+    min-height: 220px;
+  }
+
+  .project-info {
+    padding: 33px 24px;
+  }
+
+  .stack-group {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .contact-panel {
+    padding: 30px 22px;
+  }
+
+  .footer-inner {
+    min-height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-text small {
+    display: none;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-metrics article {
+    min-height: 68px;
+  }
+
+  .stack-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .stack-row b {
+    text-align: left;
+  }
+
+  .project-visual {
+    padding: 12px;
+  }
+
+  .app-dashboard {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .mock-sidebar {
+    padding: 9px 4px;
+  }
+
+  .mock-logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mock-menu {
+    width: 19px;
+    height: 19px;
+  }
+
+  .mock-list {
+    padding: 6px;
+  }
+
+  .mock-list span {
+    height: 34px;
+  }
+
+  .mock-chat {
+    padding: 20px 9px 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-one" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-two" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Voltar ao início">
+        <span class="brand-symbol">DM</span>
+        <span class="brand-text">
+          <strong>Daniel Moreira</strong>
+          <small>Analista de Sistemas</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#stack">Stack</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+
+        <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação mobile">
+      <a href="#sobre">Sobre</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Tecnologia aplicada a problemas reais
+          </div>
+
+          <h1>
+            Dados, sistemas e automação para
+            <span class="gradient-text">transformar processos.</span>
+          </h1>
+
+          <p class="hero-description">
+            Sou <strong>Daniel Moreira</strong>, formado em Análise e Desenvolvimento de Sistemas,
+            pós-graduado em Business Intelligence e profissional de TI com experiência em
+            <strong>Banco de Dados Oracle, análise de dados, desenvolvimento de sistemas,
+            automação e soluções para ambientes críticos.</strong>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projetos" class="button button-primary">
+              Conhecer projetos
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/daniel-moreira23/" target="_blank" rel="noopener noreferrer" class="button button-secondary">
+              LinkedIn
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="hero-tags">
+            <span>Oracle / PL/SQL</span>
+            <span>Business Intelligence</span>
+            <span>Node.js</span>
+            <span>Automação</span>
+            <span>Power BI</span>
+            <span>APIs</span>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal reveal-delay">
+          <div class="profile-card">
+            <div class="profile-card-top">
+              <span class="profile-status"><i></i> Perfil profissional</span>
+              <span class="profile-code">daniel.moreira</span>
+            </div>
+
+            <div class="profile-avatar">
+              <span>DM</span>
+            </div>
+
+            <div class="profile-title">
+              <strong>Daniel Moreira</strong>
+              <span>Analista de Sistemas</span>
+            </div>
+
+            <div class="profile-metrics">
+              <article>
+                <strong>4+</strong>
+                <span>anos no setor hospitalar</span>
+              </article>
+              <article>
+                <strong>BI</strong>
+                <span>dados e dashboards</span>
+              </article>
+              <article>
+                <strong>DB</strong>
+                <span>Oracle & MySQL</span>
+              </article>
+            </div>
+
+            <div class="profile-stack">
+              <div class="stack-row">
+                <span>Banco de Dados</span>
+                <b>Oracle · PL/SQL · MySQL</b>
+              </div>
+              <div class="stack-row">
+                <span>Dados & BI</span>
+                <b>Power BI · Oracle Analytics</b>
+              </div>
+              <div class="stack-row">
+                <span>Desenvolvimento</span>
+                <b>JavaScript · Node.js · HTML · PHP</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-badge float-badge-one">
+            <span>01</span>
+            <div>
+              <strong>Automação</strong>
+              <small>processos mais eficientes</small>
+            </div>
+          </div>
+
+          <div class="float-badge float-badge-two">
+            <span>02</span>
+            <div>
+              <strong>Dados</strong>
+              <small>decisões mais informadas</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="sobre">
+      <div class="container two-column">
+        <div class="section-title reveal">
+          <span class="section-kicker">Sobre mim</span>
+          <h2>Experiência técnica com visão de negócio.</h2>
+        </div>
+
+        <div class="section-content reveal reveal-delay">
+          <p class="lead">
+            Profissional de TI com sólida experiência em análise, desenvolvimento de sistemas
+            e soluções tecnológicas, com mais de quatro anos de atuação no setor hospitalar.
+          </p>
+
+          <p>
+            Minha experiência envolve análise de dados, desenvolvimento de relatórios e dashboards,
+            banco de dados Oracle, automação de processos, envio de alertas e monitoramento de
+            informações em tempo real. O objetivo é sempre o mesmo: <strong>reduzir fricção,
+            melhorar a operação e transformar dados em apoio real à tomada de decisão.</strong>
+          </p>
+
+          <blockquote>
+            “Acredito na evolução constante e no aprendizado contínuo como bases para fornecer
+            suporte tecnológico de excelência. Sou resiliente, curioso e comprometido com
+            resultados que promovam inovação e eficiência.”
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="atuacao">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Áreas de atuação</span>
+          <h2>Da infraestrutura ao dado, do processo ao sistema.</h2>
+          <p>Uma atuação multidisciplinar construída a partir de necessidades reais de negócio.</p>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="expertise-card reveal">
+            <span class="card-index">01</span>
+            <div class="card-icon">DB</div>
+            <h3>Banco de Dados</h3>
+            <p>
+              Consultas, análise, estruturação de dados e rotinas com Oracle, PL/SQL e MySQL.
+            </p>
+            <div class="mini-tags">
+              <span>Oracle</span><span>PL/SQL</span><span>MySQL</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="card-index">02</span>
+            <div class="card-icon">BI</div>
+            <h3>Dados & Business Intelligence</h3>
+            <p>
+              Relatórios, dashboards e análise de informações para apoiar decisões operacionais e estratégicas.
+            </p>
+            <div class="mini-tags">
+              <span>Power BI</span><span>Oracle Analytics</span><span>Dashboards</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="card-index">03</span>
+            <div class="card-icon">DEV</div>
+            <h3>Desenvolvimento de Sistemas</h3>
+            <p>
+              Aplicações personalizadas voltadas à produtividade, controle e melhoria de processos.
+            </p>
+            <div class="mini-tags">
+              <span>JavaScript</span><span>Node.js</span><span>HTML</span><span>PHP</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="card-index">04</span>
+            <div class="card-icon">AUT</div>
+            <h3>Automação & Monitoramento</h3>
+            <p>
+              Fluxos automatizados, alertas e acompanhamento de informações em tempo real.
+            </p>
+            <div class="mini-tags">
+              <span>APIs</span><span>Alertas</span><span>Tempo real</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="card-index">05</span>
+            <div class="card-icon">HIS</div>
+            <h3>Tecnologia Hospitalar</h3>
+            <p>
+              Experiência em sistemas hospitalares, Tasy e soluções aplicadas a ambientes críticos.
+            </p>
+            <div class="mini-tags">
+              <span>Tasy</span><span>Sistemas Hospitalares</span><span>Processos</span>
+            </div>
+          </article>
+
+          <article class="expertise-card reveal">
+            <span class="card-index">06</span>
+            <div class="card-icon">INF</div>
+            <h3>Infraestrutura & Suporte</h3>
+            <p>
+              Vivência com equipamentos Dell, HP, Lenovo, switches, firewalls, servidores e SAP.
+            </p>
+            <div class="mini-tags">
+              <span>Dell</span><span>HP</span><span>Lenovo</span><span>SAP</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="projetos">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-kicker">Projetos</span>
+          <h2>Soluções construídas para uso real.</h2>
+          <p>
+            Projetos que unem desenvolvimento, automação, dados e experiência do usuário.
+          </p>
+        </div>
+
+        <article class="featured-project reveal">
+          <div class="project-visual">
+            <div class="app-window">
+              <div class="app-window-top">
+                <div class="window-buttons"><span></span><span></span><span></span></div>
+                <div class="app-address">painel-juridico</div>
+              </div>
+
+              <div class="app-dashboard">
+                <aside class="mock-sidebar">
+                  <div class="mock-logo">AJ</div>
+                  <span class="mock-menu active"></span>
+                  <span class="mock-menu"></span>
+                  <span class="mock-menu"></span>
+                  <span class="mock-menu"></span>
+                  <span class="mock-menu"></span>
+                </aside>
+
+                <div class="mock-content">
+                  <div class="mock-header">
+                    <div>
+                      <span class="mock-title"></span>
+                      <span class="mock-subtitle"></span>
+                    </div>
+                    <span class="mock-avatar"></span>
+                  </div>
+
+                  <div class="mock-cards">
+                    <span></span><span></span><span></span>
+                  </div>
+
+                  <div class="mock-chat-area">
+                    <div class="mock-list">
+                      <span></span><span class="selected"></span><span></span><span></span>
+                    </div>
+                    <div class="mock-chat">
+                      <i class="bubble incoming"></i>
+                      <i class="bubble outgoing"></i>
+                      <i class="bubble incoming small"></i>
+                      <div class="mock-input"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <div class="project-label">Projeto em destaque</div>
+            <h3>Painel Jurídico</h3>
+            <p class="project-description">
+              Sistema web criado para centralizar o atendimento e a rotina operacional de um
+              escritório de advocacia, reunindo comunicação, agenda, clientes, documentos,
+              notificações e automações em uma única aplicação.
+            </p>
+
+            <div class="project-tech">
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>Socket.IO</span>
+              <span>WhatsApp</span>
+              <span>PWA</span>
+              <span>IA</span>
+            </div>
+
+            <ul class="project-list">
+              <li>Central de atendimento integrada ao WhatsApp</li>
+              <li>Tickets, histórico unificado e CRM</li>
+              <li>Agenda pessoal e agenda compartilhada</li>
+              <li>Notificações em tempo real</li>
+              <li>Lembretes automáticos pelo WhatsApp</li>
+              <li>Leitura e resumo de documentos com IA</li>
+              <li>Aplicação instalável no celular como PWA</li>
+              <li>Controle de usuários e permissões</li>
+            </ul>
+
+            <div class="project-security">
+              <span>🔒</span>
+              <p>
+                O código completo não é público porque a aplicação trabalha com autenticação,
+                clientes e integrações internas. O projeto é apresentado aqui como case de
+                arquitetura, desenvolvimento e experiência do usuário.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="simple-project reveal">
+            <div class="simple-project-top">
+              <span class="simple-project-icon">BI</span>
+              <span class="simple-project-status">Área de experiência</span>
+            </div>
+            <h3>Dashboards & Análise de Dados</h3>
+            <p>
+              Desenvolvimento de relatórios e painéis para transformar dados operacionais
+              em informações úteis para acompanhamento e tomada de decisão.
+            </p>
+            <div class="mini-tags">
+              <span>Power BI</span><span>Oracle Analytics</span><span>SQL</span>
+            </div>
+          </article>
+
+          <article class="simple-project reveal reveal-delay">
+            <div class="simple-project-top">
+              <span class="simple-project-icon">AUT</span>
+              <span class="simple-project-status">Área de experiência</span>
+            </div>
+            <h3>Automação de Processos</h3>
+            <p>
+              Soluções para monitoramento, envio de alertas e redução de atividades
+              repetitivas em processos internos.
+            </p>
+            <div class="mini-tags">
+              <span>JavaScript</span><span>APIs</span><span>Alertas</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Competências técnicas</span>
+          <h2>Ferramentas que fazem parte da minha trajetória.</h2>
+        </div>
+
+        <div class="stack-groups">
+          <article class="stack-group reveal">
+            <div>
+              <span class="stack-number">01</span>
+              <h3>Banco de Dados</h3>
+            </div>
+            <div class="stack-items">
+              <span>Oracle</span>
+              <span>PL/SQL</span>
+              <span>MySQL</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <div>
+              <span class="stack-number">02</span>
+              <h3>Dados & BI</h3>
+            </div>
+            <div class="stack-items">
+              <span>Power BI</span>
+              <span>Oracle Analytics</span>
+              <span>Relatórios</span>
+              <span>Dashboards</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <div>
+              <span class="stack-number">03</span>
+              <h3>Desenvolvimento</h3>
+            </div>
+            <div class="stack-items">
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>PHP</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <div>
+              <span class="stack-number">04</span>
+              <h3>Sistemas & Infraestrutura</h3>
+            </div>
+            <div class="stack-items">
+              <span>Tasy</span>
+              <span>SAP</span>
+              <span>Dell</span>
+              <span>HP</span>
+              <span>Lenovo</span>
+              <span>Switches</span>
+              <span>Firewalls</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <div>
+              <span class="stack-number">05</span>
+              <h3>Metodologias</h3>
+            </div>
+            <div class="stack-items">
+              <span>Scrum</span>
+              <span>Governança de TI</span>
+              <span>Segurança de TI</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="container contact-panel reveal">
+        <div class="contact-main">
+          <span class="section-kicker">Contato</span>
+          <h2>Vamos conversar?</h2>
+          <p>
+            Estou aberto a novos projetos, oportunidades profissionais e conexões
+            com pessoas que também acreditam em tecnologia aplicada a resultados.
+          </p>
+
+          <a class="button button-primary" href="mailto:danmoreira.itau@gmail.com">
+            Enviar e-mail
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="contact-list">
+          <a href="mailto:danmoreira.itau@gmail.com" class="contact-item">
+            <span class="contact-symbol">@</span>
+            <div>
+              <small>E-mail</small>
+              <strong>danmoreira.itau@gmail.com</strong>
+            </div>
+            <b>↗</b>
+          </a>
+
+          <a href="https://wa.me/5519982030767" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-symbol">WA</span>
+            <div>
+              <small>WhatsApp</small>
+              <strong>(19) 98203-0767</strong>
+            </div>
+            <b>↗</b>
+          </a>
+
+          <a href="https://www.linkedin.com/in/daniel-moreira23/" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-symbol">in</span>
+            <div>
+              <small>LinkedIn</small>
+              <strong>Daniel Moreira</strong>
+            </div>
+            <b>↗</b>
+          </a>
+
+          <a href="https://github.com/danmoreiradev" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-symbol">GH</span>
+            <div>
+              <small>GitHub</small>
+              <strong>@danmoreiradev</strong>
+            </div>
+            <b>↗</b>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>Daniel Moreira</strong>
+        <span>Analista de Sistemas</span>
+      </div>
+      <p>© <span id="year"></span> · Desenvolvido com HTML, CSS e JavaScript.</p>
+    </div>
+  </footer>
+  <script>
+(() => {
+  const root = document.documentElement;
+  const header = document.querySelector(".site-header");
+  const themeToggle = document.getElementById("theme-toggle");
+  const menuButton = document.getElementById("menu-button");
+  const mobileNav = document.getElementById("mobile-nav");
+  const year = document.getElementById("year");
+
+  const savedTheme = localStorage.getItem("dm-portfolio-theme");
+  const prefersLight = window.matchMedia?.("(prefers-color-scheme: light)")?.matches;
+
+  root.dataset.theme = savedTheme || (prefersLight ? "light" : "dark");
+
+  themeToggle?.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    localStorage.setItem("dm-portfolio-theme", next);
+  });
+
+  menuButton?.addEventListener("click", () => {
+    const open = mobileNav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+
+  mobileNav?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      menuButton?.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  function updateHeader() {
+    header?.classList.toggle("scrolled", window.scrollY > 10);
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
+  }
+
+  const items = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.10,
+      rootMargin: "0px 0px -35px 0px"
+    });
+
+    items.forEach(item => observer.observe(item));
+  } else {
+    items.forEach(item => item.classList.add("revealed"));
+  }
+})();
+
+  </script>
+</body>
+</html>
